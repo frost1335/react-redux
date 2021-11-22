@@ -18,7 +18,7 @@ class App extends React.Component {
           Счетчик <strong>{this.props.counter}</strong>
         </h1>
 
-        <hr /> 
+        <hr />
 
         <div className="Actions">
           <button onClick={this.props.onAdd}>Добавить 1</button>
@@ -37,6 +37,7 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state);
   return {
     counter: state.counter,
   };
