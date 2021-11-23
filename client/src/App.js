@@ -11,7 +11,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className={"App"}>
         <h1>
@@ -39,7 +38,7 @@ class App extends React.Component {
 function mapStateToProps(state) {
   console.log(state);
   return {
-    counter: state.counter,
+    counter: state.counter1.counter,
   };
 }
 

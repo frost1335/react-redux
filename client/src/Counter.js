@@ -8,8 +8,8 @@ class Counter extends React.Component {
         <h1>Counter {this.props.counter}</h1>
         <hr />
         <div>
-          <button>Add</button>
-          <button>Sub</button>
+          <button onClick={() => this.props.onChange(5)}>Add</button>
+          <button onClick={() => this.props.onChange(-5)}>Sub</button>
         </div>
       </div>
     );
@@ -18,8 +18,14 @@ class Counter extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    counter: state,
+    counter: state.counter2.counter2,
   };
 }
 
-export default connect()(Counter);
+function mapDispatchToProps(dispatch) {
+  return {
+    onChange: (number) => dispatch({ type: "ADD2", payload: number }),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
